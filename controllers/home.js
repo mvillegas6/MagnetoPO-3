@@ -1,9 +1,10 @@
 
 const main = (req, res, next) => {
-  res.send('hola');
+  res.render('home');
 };
 
 
 module.exports = homeControllers = {
     main,
   };
+  

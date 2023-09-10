@@ -3,8 +3,12 @@ const methodOverride = require('method-override');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const homeRoutes = require('./routes/home');
+const {dbConnection} = require('./database')
 
 const app = express();
+
+// dbConnection()
+
 
 app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true }));
