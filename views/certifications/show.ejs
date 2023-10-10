@@ -1,0 +1,12 @@
+<% layout('layout/boilerplate') %> <%- include('../templates/navbar') %>
+<link rel="stylesheet" href="/styles/show.css" />
+
+<main class="mainContainer">
+  <section class="certificationContainer">
+    <% for (let certification of certifications) {%>
+    <div class="certification">
+      <h4><%= certification.name %></h4>
+    </div>
+    <% } %>
+  </section>
+</main>
