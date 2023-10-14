@@ -1,4 +1,4 @@
-const Certifications = require('../models/models');
+const { models } = require('../models/models');
 const { Op } = require('sequelize');
 
 const show = async (req, res, next) => {
@@ -8,7 +8,7 @@ const show = async (req, res, next) => {
     // Search by name
     if (req.query.q) {
       keyword = req.query.q;
-      certifications = await Certifications.findAll({
+      certifications = await models.Certifications.findAll({
         where: {
           name: {
             [Op.iLike]: `%${keyword}%`,
@@ -16,7 +16,7 @@ const show = async (req, res, next) => {
         },
       });
     } else {
-      certifications = await Certifications.findAll();
+      certifications = await models.Certifications.findAll();
     }
     res.render('certifications/show', { certifications, keyword });
   } catch (error) {
