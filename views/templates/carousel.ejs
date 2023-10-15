@@ -1,322 +1,288 @@
+<link rel="stylesheet" href="/styles/home.css" />
 <div
-    id="carouselExampleAutoplaying"
-    class="carousel slide"
-    data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img
-                src="https://picsum.photos/1920/1080"
-                class="d-block w-100"
-                alt="..." />
-        </div>
-        <div class="carousel-item">
-            <img
-                src="https://picsum.photos/1920/1070"
-                class="d-block w-100"
-                alt="..." />
-        </div>
-        <div class="carousel-item">
-            <img
-                src="https://picsum.photos/1920/1060"
-                class="d-block w-100"
-                alt="..." />
-        </div>
+  id="carouselExampleAutoplaying"
+  class="carousel slide mainCarousel"
+  data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="https://res.cloudinary.com/dccqc6cwg/image/upload/v1697410464/dm9vpnuzqzwg7dg3ndsy.png"
+        class="d-block w-100"
+        alt="..." />
     </div>
-    <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+    <div class="carousel-item">
+      <img
+        src="https://picsum.photos/1920/1070"
+        class="d-block w-100"
+        alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://picsum.photos/1920/1060"
+        class="d-block w-100"
+        alt="..." />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <br />
+<main class="mainContainer">
+  <h2 class="text-center mb-3">Start Learning</h2>
 
-<h2>Start Learning</h2>
-
-<div id="carouselExampleIndicators" class="carousel slide">
+  <div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
-        <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"></button>
-        <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="row">
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[0].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[0].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[0].expedition_date %>
-                        </p>
-                        <% if (certifications[0].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[0].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[1].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[1].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[1].expedition_date %>
-                        </p>
-                        <% if (certifications[1].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[1].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[2].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[2].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[2].expedition_date %>
-                        </p>
-                        <% if (certifications[2].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[2].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[0].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[0].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[0].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[0].expedition_date %>
+              </p>
+              <% if (certifications[0].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[0].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="row">
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[3].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[3].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[3].expedition_date %>
-                        </p>
-                        <% if (certifications[3].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[3].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[4].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[4].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[4].expedition_date %>
-                        </p>
-                        <% if (certifications[4].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[4].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[5].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[5].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[5].expedition_date %>
-                        </p>
-                        <% if (certifications[5].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[5].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+          </div>
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[1].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[1].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[1].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[1].expedition_date %>
+              </p>
+              <% if (certifications[1].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[1].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="row">
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[6].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[6].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[6].expedition_date %>
-                        </p>
-                        <% if (certifications[6].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[6].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[7].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[7].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[7].expedition_date %>
-                        </p>
-                        <% if (certifications[7].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[7].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4">
-                    <img
-                        src="https://picsum.photos/700"
-                        class="card-img-top"
-                        alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= certifications[8].name %>
-                        </h5>
-                        <p class="card-text">
-                            Intitution: <%= certifications[8].institution %>
-                        </p>
-                        <p class="card-text">
-                            Expedition Date: <%=
-                            certifications[8].expedition_date %>
-                        </p>
-                        <% if (certifications[8].expiration_date) { %>
-                        <p class="card-text">
-                            Expiration Date: <%=
-                            certifications[8].expiration_date %>
-                        </p>
-                        <% } %>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+          </div>
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[2].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[2].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[2].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[2].expedition_date %>
+              </p>
+              <% if (certifications[2].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[2].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[3].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[3].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[3].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[3].expedition_date %>
+              </p>
+              <% if (certifications[3].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[3].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[4].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[4].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[4].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[4].expedition_date %>
+              </p>
+              <% if (certifications[4].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[4].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[5].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[5].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[5].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[5].expedition_date %>
+              </p>
+              <% if (certifications[5].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[5].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[6].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[6].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[6].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[6].expedition_date %>
+              </p>
+              <% if (certifications[6].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[6].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[7].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[7].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[7].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[7].expedition_date %>
+              </p>
+              <% if (certifications[7].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[7].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card col-4 p-0">
+            <img
+              src="<%= certifications[8].image%>"
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><%= certifications[8].name %></h5>
+              <p class="card-text">
+                Intitution: <%= certifications[8].institution %>
+              </p>
+              <p class="card-text">
+                Expedition Date: <%= certifications[8].expedition_date %>
+              </p>
+              <% if (certifications[8].expiration_date) { %>
+              <p class="card-text">
+                Expiration Date: <%= certifications[8].expiration_date %>
+              </p>
+              <% } %>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
     </button>
     <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
     </button>
-</div>
+  </div>
+</main>
