@@ -2,11 +2,18 @@
 <link rel="stylesheet" href="/styles/show.css" />
 
 <main class="mainContainer">
+  <section class="leftContainer"></section>
+
   <section class="certificationContainer">
-    <% for (let certification of certifications) {%>
-    <div class="certification">
-      <h4><%= certification.name %></h4>
+    <div class="serachBar">
+      <input class="searchInput" placeholder="Buscar cursos" type="text" />
     </div>
-    <% } %>
+    <div class="certifications">
+      <% for (let certification of certifications) {%>
+      <div class="certification">
+        <h4><%= certification.name %></h4>
+      </div>
+      <% } %>
+    </div>
   </section>
 </main>
