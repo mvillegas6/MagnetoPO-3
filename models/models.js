@@ -96,10 +96,7 @@ Certifications.belongsToMany(Users, { through: CertificationUser });
 Reviews.belongsToMany(Certifications, { through: 'certificationReviews' });
 Certifications.belongsToMany(Reviews, { through: 'certificationReviews' });
 
-module.exports = Certifications;
-module.exports = Users;
-module.exports = CertificationUser;
-module.exports = Reviews;
+module.exports.models = { Certifications, Users, CertificationUser, Reviews };
 
 module.exports.sequelizeSync = async () => {
   await sequelize.sync({ force: true });
