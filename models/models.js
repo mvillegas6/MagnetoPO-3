@@ -24,6 +24,12 @@ const Certifications = sequelize.define(
     expiration_date: {
       type: DataTypes.DATEONLY,
     },
+    image: {
+      type: DataTypes.STRING,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
   },
   {
     timestamps: true,
