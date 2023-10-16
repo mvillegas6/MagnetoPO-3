@@ -1,2 +1,69 @@
-<% layout('layout/boilerplate') %> <%- include('./templates/navbar') %> <%-
-include('./templates/carousel') %>
+<% layout('layout/boilerplate') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <title>Course Advisor</title>
+</head>
+<body>
+    
+    <%- include('./templates/navbar') %>
+
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h4>Descubre tu potencial</h4>
+            <H1>Bienvenido a <span>Course Advisor</span></H1> 
+            <p>
+                Tu destino confiable para descubrir cursos 
+                que transformarán tu camino profesional. Explora nuestra selección 
+                cuidadosa de cursos en línea, desde tecnología hasta creatividad, y 
+                encuentra la clave para desbloquear tu máximo potencial. Con 
+                herramientas de recomendación personalizadas y reseñas de estudiantes, 
+                te ayudamos a tomar decisiones informadas y a avanzar en tu aprendizaje 
+                de manera efectiva. iEmpieza hoy tu viaje hacia el éxito con Course Advisor!
+            </p>
+            <button class="btn">Get Started</button>
+        </div>
+        <div class="image">
+            <img src="https://ouch-cdn2.icons8.com/1LBbgutstyXu4-jCwXD82RT_fmXMYl2-4UYrxyM0YIM/rs:fit:608:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNzAw/L2E5NzdjNTY5LWU1/MDUtNDNjZS1iODBl/LWM3N2ZlOTU1NTkz/ZC5zdmc.png">
+        </div>
+    </header>
+
+    <section class="container">
+        <%-include('./templates/carousel') %>
+    </section>
+    
+    <footer class="footer-container">
+        <div class="footer-content">
+          <div class="contact-info">
+            ¿Preguntas? Llama al <a href="tel:3207675375">320 767 53 75</a>
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#">Preguntas frecuentes</a></li>
+              <li><a href="#">Centro de ayuda</a></li>
+              <li><a href="#">Cuenta</a></li>
+            </ul>
+          </div>
+          <div class="language-picker">
+            <label for="language-select">Selecciona el idioma</label>
+            <select id="language-select" name="LanguageSelect">
+              <option selected lang="es" value="es-CO">Español</option>
+              <option lang="en" value="en-CO">English</option>
+            </select>
+          </div>
+          <div class="footer-info">
+            CourseAdvisor Colombia
+          </div>
+        </div>
+      </footer>
+           
+
+    <script src="script.js"></script>
+</body>
+</html>

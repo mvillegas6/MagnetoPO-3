@@ -9,3 +9,257 @@
 .mainCarousel {
   padding: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.btn{
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1d4ed8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #1d4ed8;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1d4ed8;
+    z-index: -100;
+}
+
+header{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #18181B;
+}
+
+header .content h4{
+  margin-bottom: 1rem;
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+header .content h1{
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+
+header .content h1 span{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
+h2{
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+
+h2 span{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
+header .content p{
+  margin-bottom: 2rem;
+  color: #ccc;
+
+}
+
+header .image{
+  position: relative;
+
+}
+
+header .image::before{
+  content: "o";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 38rem;
+  font-weight: 400;
+  line-height: 20rem;
+  color: #1d4ed8;
+  opacity: 0.2;
+  z-index: -100;
+}
+
+header .image img{
+  max-width: 600px;
+  margin: auto;
+}
+
+.carousel-inner .carousel-item .card {
+  margin-right: 10px;
+}
+
+.carousel-inner .carousel-item .card img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.carousel-inner .carousel-item .card {
+  width: 350px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.card .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.card .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+footer{
+  -webkit-text-size-adjust: 100%;
+  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+  display: block;
+  color: rgba(255,255,255,0.7);
+  margin: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.default-ltr-cache-1b5mvc4 eslj5pt1{
+  -webkit-text-size-adjust: 100%;
+  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  width: 100%;
+  display: inherit;
+  height: auto;
+}
+
+.default-ltr-cache-1b5mvc4 eslj5pt1{
+  -webkit-text-size-adjust: 100%;
+  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  display: inherit;
+  height: auto;
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.footer-container {
+  background-color: transparent;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-info {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #007bff; 
+}
+
+.language-picker label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.language-picker select {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-info {
+  margin-top: 10px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
