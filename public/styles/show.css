@@ -3,6 +3,10 @@ body {
   overflow-y: hidden;
 }
 
+.certifications a {
+  text-decoration: none;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;
@@ -93,6 +97,7 @@ main .certification {
   border-radius: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   height: 180px;
+  color: #000;
 }
 
 .certification:hover {

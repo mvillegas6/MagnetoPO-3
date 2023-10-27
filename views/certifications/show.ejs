@@ -20,20 +20,22 @@
     </form>
     <div class="certifications">
       <% for (let certification of certifications) {%>
-      <div class="certification">
-        <div class="info">
-          <div class="imgContainer">
-            <img
-              class="img-fluid certificationImage"
-              src="<%= certification.image %>"
-              alt="" />
-          </div>
-          <div class="infoContainer">
-            <h4><%= certification.name %></h4>
-            <p><%= certification.description %></p>
+      <a href="/certifications/<%= certification.id %>">
+        <div class="certification">
+          <div class="info">
+            <div class="imgContainer">
+              <img
+                class="img-fluid certificationImage"
+                src="<%= certification.image %>"
+                alt="" />
+            </div>
+            <div class="infoContainer">
+              <h4><%= certification.name %></h4>
+              <p><%= certification.description %></p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
       <% } %>
     </div>
   </section>

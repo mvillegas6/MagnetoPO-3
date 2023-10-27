@@ -24,6 +24,12 @@ const show = async (req, res, next) => {
   }
 };
 
+const renderDetailsPage = async (req, res, next) => {
+  certification = await models.Certifications.findByPk(req.params.id);
+  res.render('certifications/details', { certification });
+};
+
 module.exports = certificationsControllers = {
   show,
+  renderDetailsPage,
 };

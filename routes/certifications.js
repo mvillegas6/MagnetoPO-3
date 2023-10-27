@@ -1,5 +1,8 @@
 const express = require('express');
 const Router = express.Router();
-const certificationsControllers = require('../controllers/certifications')
+const certificationsControllers = require('../controllers/certifications');
 
-module.exports = Router.get('/', certificationsControllers.show);
+module.exports = Router.get('/', certificationsControllers.show).get(
+  '/:id',
+  certificationsControllers.renderDetailsPage
+);
