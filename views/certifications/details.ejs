@@ -96,7 +96,12 @@
       </div>
       <% for (let review of reviews) {%>
       <div class="commentdiv">
-        <p class="cTitle"><%= review.rating %> Stars</p>
+              <div class="reviewRatingComment">
+                <fieldset class="starability-basic">
+                  <p class="starability-result" data-rating="<%= review.rating %>">
+                  </p>
+                </fieldset>
+              </div>
         <p class="cBody"><%= review.comment %></p>
       </div>
       <hr />
