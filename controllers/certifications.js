@@ -46,12 +46,12 @@ const renderDetailsPage = async (req, res, next) => {
 
 const newReview = async (req, res, next) => {
   try {
-    const omnyUser = await models.Users.findByPk(1); // omnyUser if you dont have create it
+    // const omnyUser = await models.Users.findByPk(1); // omnyUser if you dont have create it
     const certification = await models.Certifications.findByPk(req.params.id);
     const review = await models.Reviews.create({
       rating: req.body.reviews.rating,
       comment: req.body.reviews.body,
-      author: omnyUser.name,
+      author: 'OmnyUser',
     });
     await certification.addReviews(review, { through: { selfGranted: false } });
 
