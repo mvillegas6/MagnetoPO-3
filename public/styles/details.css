@@ -16,7 +16,11 @@
   background-color: #e5e5e5;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.reviewRatingComment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .certificationDetails {
   background-color: #ffff;
   display: flex;
@@ -72,10 +76,34 @@
 
 .rating {
   align-items: center;
-  margin-left: 15px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 15px;
+  /* margin-left: 15px; */
   display: flex;
+  /* width: 100%; */
   height: fit-content;
   border-bottom-left-radius: 10px;
+}
+
+.rating form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.reviewRating {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  margin-right: 20px;
+}
+
+.reviwesBody {
+  display: flex;
+  width: 100%;
+  justify-content: end;
 }
 
 .commentsContainer {

@@ -78,7 +78,7 @@ const Reviews = sequelize.define(
   'reviews',
   {
     rating: {
-      type: DataTypes.ENUM('1', '2', '3', '4', '5'),
+      type: DataTypes.ENUM('0', '1', '2', '3', '4', '5'),
       allowNull: false,
     },
     comment: {
@@ -95,16 +95,28 @@ const Reviews = sequelize.define(
   }
 );
 
+const CertificationReviews = sequelize.define('certificationReviews', {});
+
 Users.hasMany(Reviews);
 Reviews.belongsTo(Users);
 Users.belongsToMany(Certifications, { through: CertificationUser });
 Certifications.belongsToMany(Users, { through: CertificationUser });
-Reviews.belongsToMany(Certifications, { through: 'certificationReviews' });
-Certifications.belongsToMany(Reviews, { through: 'certificationReviews' });
+Reviews.belongsToMany(Certifications, { through: CertificationReviews });
+Certifications.belongsToMany(Reviews, { through: CertificationReviews });
+Reviews.hasMany(CertificationReviews);
+CertificationReviews.belongsTo(Reviews);
+Certifications.hasMany(CertificationReviews);
+CertificationReviews.belongsTo(Certifications);
 
-module.exports.models = { Certifications, Users, CertificationUser, Reviews };
+module.exports.models = {
+  Certifications,
+  Users,
+  CertificationUser,
+  Reviews,
+  CertificationReviews,
+};
 
 module.exports.sequelizeSync = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ alter: true });
   console.log('All models were synchronized successfully.');
 };

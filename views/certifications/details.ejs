@@ -33,97 +33,79 @@
         </div>
       </div>
       <div class="rating">
-        <fieldset class="starability-basic">
-          <input
-            type="radio"
-            id="no-rate"
-            class="input-no-rate"
-            name="reviews[rating]"
-            value="0"
-            checked
-            aria-label="No rating." />
-          <input
-            type="radio"
-            id="first-rate1"
-            name="reviews[rating]"
-            value="1" />
-          <label for="first-rate1" title="Terrible">1 star</label>
-          <input
-            type="radio"
-            id="first-rate2"
-            name="reviews[rating]"
-            value="2" />
-          <label for="first-rate2" title="Not good">2 stars</label>
-          <input
-            type="radio"
-            id="first-rate3"
-            name="reviews[rating]"
-            value="3" />
-          <label for="first-rate3" title="Average">3 stars</label>
-          <input
-            type="radio"
-            id="first-rate4"
-            name="reviews[rating]"
-            value="4" />
-          <label for="first-rate4" title="Very good">4 stars</label>
-          <input
-            type="radio"
-            id="first-rate5"
-            name="reviews[rating]"
-            value="5" />
-          <label for="first-rate5" title="Amazing">5 stars</label>
-        </fieldset>
+        <form action="" method="post">
+          <div class="reviewRating">
+            <fieldset class="starability-basic">
+              <input
+                type="radio"
+                id="no-rate"
+                class="input-no-rate"
+                name="reviews[rating]"
+                value="0"
+                checked
+                aria-label="No rating." />
+              <input
+                type="radio"
+                id="first-rate1"
+                name="reviews[rating]"
+                value="1" />
+              <label for="first-rate1" title="Terrible">1 star</label>
+              <input
+                type="radio"
+                id="first-rate2"
+                name="reviews[rating]"
+                value="2" />
+              <label for="first-rate2" title="Not good">2 stars</label>
+              <input
+                type="radio"
+                id="first-rate3"
+                name="reviews[rating]"
+                value="3" />
+              <label for="first-rate3" title="Average">3 stars</label>
+              <input
+                type="radio"
+                id="first-rate4"
+                name="reviews[rating]"
+                value="4" />
+              <label for="first-rate4" title="Very good">4 stars</label>
+              <input
+                type="radio"
+                id="first-rate5"
+                name="reviews[rating]"
+                value="5" />
+              <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+            <button class="btn btn-success">Save review</button>
+          </div>
+          <div class="reviwesBody">
+            <textarea
+              name="reviews[body]"
+              id="bReview"
+              placeholder="Express yourself!!"
+              class="form-control"
+              cols="30"
+              rows="3"
+              required></textarea>
+          </div>
+        </form>
       </div>
     </div>
     <div class="commentsContainer">
       <div class="commentTitle">
         <h2>Comentarios</h2>
       </div>
+      <% for (let review of reviews) {%>
       <div class="commentdiv">
-        <p class="cTitle">Comentario 1</p>
-        <p class="cBody">Muy recomendado!</p>
+              <div class="reviewRatingComment">
+                <fieldset class="starability-basic">
+                  <p class="starability-result" data-rating="<%= review.rating %>">
+                  </p>
+                </fieldset>
+              </div>
+        <p class="cBody"><%= review.comment %></p>
       </div>
       <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 2</p>
-        <p class="cBody">Me gustó mucho 👍🏻</p>
-      </div>
-      <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 3</p>
-        <p class="cBody">Muy buen curso</p>
-      </div>
-      <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 4</p>
-        <p class="cBody">Gracias a este curso he conseguido muchas ofertas</p>
-      </div>
-      <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 5</p>
-        <p class="cBody">Este curso cambió mi vida, ¡la recomiendo!</p>
-      </div>
-      <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 6</p>
-        <p class="cBody">El curso fue asombroso, una experiencia inolvidable</p>
-      </div>
-      <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 7</p>
-        <p class="cBody">
-          Este producto superó mis expectativas. ¡Impresionante!
-        </p>
-      </div>
-      <hr />
-      <div class="commentdiv">
-        <p class="cTitle">Comentario 8</p>
-        <p class="cBody">
-          Recomendaría este curso a todos mis amigos. Grandes descuentos y
-          selección.
-        </p>
-      </div>
-      <hr />
+      <% } %>
     </div>
   </div>
 </main>
