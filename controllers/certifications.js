@@ -1,11 +1,12 @@
 const { models } = require('../models/models');
 const { Op } = require('sequelize');
+const manager = require('../util/filterManager');
 
 const show = async (req, res, next) => {
   let certifications;
   let keyword = '';
   try {
-    // Search by name
+    const filtro = req.query.filtro;
     if (req.query.q) {
       keyword = req.query.q;
       certifications = await models.Certifications.findAll({
@@ -18,115 +19,8 @@ const show = async (req, res, next) => {
     } else {
       certifications = await models.Certifications.findAll();
     }
-    if (req.query.filtro){
-      switch (req.query.filtro) {
-        case '>':
-          certifications = await models.Certifications.findAll({
-            order:[
-              ['price', 'DESC'],
-            ],
-          });
-          break;
-        case '<':
-          certifications = await models.Certifications.findAll({
-            order:[
-              ['price', 'ASC'],
-            ],
-          });
-          break;
-        case '>10':
-          certifications = await models.Certifications.findAll({
-            where:{
-              duration:{
-                [Op.between] : [10,30],
-              }
-            },
-            order:[
-              ['duration', 'ASC']
-            ],
-          });
-          break;
-        case '>30':
-          certifications = await models.Certifications.findAll({
-            where:{
-              duration:{
-                [Op.between] : [30,50],
-              }
-            },
-            order:[
-              ['duration', 'ASC']
-            ],
-          });
-          break;
-        case '>50':
-          certifications = await models.Certifications.findAll({
-            where:{
-              duration:{
-                [Op.gt] : 50,
-              }
-            },
-            order:[
-              ['duration', 'ASC']
-            ],
-          });
-          break;
-        case 'Tecnologia':
-          certifications = await models.Certifications.findAll({
-            where:{
-              topic: {
-                [Op.iLike]: `%${'Tecnologia'}%`,
-              },
-            }
-          });
-          break;
-        case 'Mercadeo':
-          certifications = await models.Certifications.findAll({
-            where:{
-              topic: {
-                [Op.iLike]: `%${'Mercadeo'}%`,
-              },
-            },
-          });
-          break;
-        case 'Emprendimiento':
-          certifications = await models.Certifications.findAll({
-            where:{
-              topic: {
-                [Op.iLike]: `%${'Emprendimiento'}%`,
-              },
-            },
-          });
-          break;
-        case 'Udemy':
-          certifications = await models.Certifications.findAll({
-            where:{
-              institution: {
-                [Op.iLike]: `%${'Udemy'}%`,
-              },
-            },
-          });
-          break;
-        case 'Platzi':
-          certifications = await models.Certifications.findAll({
-            where:{
-              institution: {
-                [Op.iLike]: `%${'Platzi'}%`,
-              },
-            },
-          });
-          break;
-        case 'EAFIT':
-          certifications = await models.Certifications.findAll({
-            where:{
-              institution: {
-                [Op.iLike]: `%${'EAFIT'}%`,
-              },
-            },
-          });
-          break;
-        default:
-          break;
-      }
+    if (filtro){
+      certifications = await manager(filtro,req);
     }
     res.render('certifications/show', { certifications, keyword });
   } catch (error) {
