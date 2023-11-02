@@ -105,6 +105,9 @@
   width: 100%;
   justify-content: end;
 }
+.reviwesBody textarea {
+  max-height: 96px;
+}
 
 .commentsContainer {
   display: flex;
@@ -140,6 +143,13 @@ hr {
   margin-bottom: 30px;
   border-radius: 10px;
 }
+
+
+
+
+
+
+/* ---------------------------------------------------------- */
 
 .cTitle {
   font-weight: bold;

@@ -14,6 +14,26 @@ const Certifications = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    topic:{
+      type:DataTypes.STRING,
+      allowNull: true,
+    },
+    institution: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    coursePage:{
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    duration:{
+      type:DataTypes.INTEGER,
+      allowNull: true,
+    },
+    price:{
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     does_not_expire: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

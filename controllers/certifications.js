@@ -1,11 +1,12 @@
 const { models } = require('../models/models');
 const { Op } = require('sequelize');
+const manager = require('../util/filterManager');
 
 const show = async (req, res, next) => {
   let certifications;
   let keyword = '';
   try {
-    // Search by name
+    const filtro = req.query.filtro;
     if (req.query.q) {
       keyword = req.query.q;
       certifications = await models.Certifications.findAll({
@@ -17,6 +18,9 @@ const show = async (req, res, next) => {
       });
     } else {
       certifications = await models.Certifications.findAll();
+    }
+    if (filtro){
+      certifications = await manager(filtro,req);
     }
     res.render('certifications/show', { certifications, keyword });
   } catch (error) {

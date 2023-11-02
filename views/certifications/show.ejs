@@ -5,7 +5,36 @@
   crossorigin="anonymous"></script>
 
 <main class="mainContainer">
-  <section class="leftContainer"></section>
+  <section class="leftContainer">
+    <h1 class="title text-center mb-3">Filtra nuestros cursos!</h1>
+    <div class="filtersContainer">
+      <a href="#" class="mainAnchor">Precio</a>
+      <div class="Aoptions d-none">
+        <a href="/certifications?filtro=>">Altos a bajos</a>
+        <a href="/certifications?filtro=<">Bajos a altos</a>
+      </div>
+      <a href="#" class="mainAnchor">Duración</a>
+      <div class="Aoptions d-none">
+        <a href="/certifications?filtro=>10">De 10 a 30 horas</a>
+        <a href="/certifications?filtro=>30">De 30 a 50 horas</a>
+        <a href="/certifications?filtro=>50">Mas de 50 horas</a>
+      </div>
+      <a href="#" class="mainAnchor">Area</a> 
+      <div class="Aoptions d-none">
+        <a href="/certifications?filtro=Tecnologia">Tecnologia</a>
+        <a href="/certifications?filtro=Mercadeo">Mercadeo</a>
+        <a href="/certifications?filtro=Emprendimiento">Emprendimiento</a>
+      </div>
+      <a href="#" class="mainAnchor">Empleabilidad</a>
+      <div class="Aoptions d-none"></div>
+      <a href="#" class="mainAnchor">Institución</a>
+      <div class="Aoptions d-none">
+        <a href="/certifications?filtro=Udemy">Udemy</a>
+        <a href="/certifications?filtro=Platzi">Platzi</a>
+        <a href="/certifications?filtro=EAFIT">EAFIT</a>
+      </div>
+    </div>
+  </section>
 
   <section class="certificationContainer">
     <form action="" class="serachBar">
@@ -32,6 +61,8 @@
             <div class="infoContainer">
               <h4><%= certification.name %></h4>
               <p><%= certification.description %></p>
+              <p>Precio: <%=certification.price%>$</p>
+              <p>Duracion: <%= certification.duration %> horas</p>
             </div>
           </div>
         </div>
@@ -40,3 +71,5 @@
     </div>
   </section>
 </main>
+
+<script src="/scripts/filters.js"></script>
