@@ -1,26 +1,16 @@
 const { models } = require('../models/models');
 const { Op } = require('sequelize');
-const manager = require('../util/filterManager');
+const filters = require('../util/filterManager');
+
 
 const show = async (req, res, next) => {
   let certifications;
   let keyword = '';
   try {
     const filtro = req.query.filtro;
-    if (req.query.q) {
-      keyword = req.query.q;
-      certifications = await models.Certifications.findAll({
-        where: {
-          name: {
-            [Op.iLike]: `%${keyword}%`,
-          },
-        },
-      });
-    } else {
-      certifications = await models.Certifications.findAll();
-    }
-    if (filtro){
-      certifications = await manager(filtro,req);
+    certifications = await filters.querySearch(req.query.q);
+    if (filtro) {
+      certifications = await filters.manager(filtro, req);
     }
     res.render('certifications/show', { certifications, keyword });
   } catch (error) {
@@ -30,18 +20,9 @@ const show = async (req, res, next) => {
 
 const renderDetailsPage = async (req, res, next) => {
   try {
-    certification = await models.Certifications.findByPk(req.params.id);
-    reviews = (
-      await models.Reviews.findAll({
-        include: {
-          model: models.CertificationReviews,
-          where: {
-            certificationId: req.params.id,
-          },
-        },
-      })
-    ).reverse();
-    console.log(reviews);
+    certificationId = req.params.id;
+    certification = await filters.findCertificationByPk(certificationId);
+    reviews = (await filters.filterReviews(certificationId)).reverse();
     res.render('certifications/details', { certification, reviews });
   } catch (error) {
     next(error);
@@ -51,14 +32,8 @@ const renderDetailsPage = async (req, res, next) => {
 const newReview = async (req, res, next) => {
   try {
     // const omnyUser = await models.Users.findByPk(1); // omnyUser if you dont have create it
-    const certification = await models.Certifications.findByPk(req.params.id);
-    const review = await models.Reviews.create({
-      rating: req.body.reviews.rating,
-      comment: req.body.reviews.body,
-      author: 'OmnyUser',
-    });
-    await certification.addReviews(review, { through: { selfGranted: false } });
-
+    const certification = await filters.findCertificationByPk(req.params.id);
+    await filters.addReview(req.body.reviews, certification);
     res.redirect(`/certifications/${req.params.id}`);
   } catch (error) {
     next(error);
