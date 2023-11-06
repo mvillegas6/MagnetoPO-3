@@ -11,7 +11,7 @@ const app = express();
 
 dbConnection();
 
-// sequelizeSync(); // Sync models with database
+sequelizeSync(); // Sync models with database
 
 app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true }));

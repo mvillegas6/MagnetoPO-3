@@ -22,7 +22,7 @@ const Certifications = sequelize.define(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    coursePage:{
+    coursepage:{
       type: DataTypes.STRING,
       allowNull: true,
     },
