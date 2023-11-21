@@ -18,8 +18,8 @@ const Certifications = sequelize.define(
       type:DataTypes.STRING,
       allowNull: true,
     },
-    institution: {
-      type: DataTypes.STRING,
+    employability: {
+      type: DataTypes.FLOAT,
       allowNull: true,
     },
     coursepage:{
@@ -77,10 +77,18 @@ const Users = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    mycertifications: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      allowNull: true,
+    },
+    employeestatus: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    }
   },
   {
     timestamps: true,
-    createdAt: true,
+    createdAt: false,
     updatedAt: false,
   }
 );
@@ -140,3 +148,60 @@ module.exports.sequelizeSync = async () => {
   await sequelize.sync({ alter: true });
   console.log('All models were synchronized successfully.');
 };
+
+async function calculateEmployability() {
+  try {
+    const users = await Users.findAll();
+    const dictionary = {};
+    const dictionary2 = {};
+
+    users.forEach((user) => {
+      const a = user.mycertifications;
+
+      a.forEach((item) => {
+        if (dictionary.hasOwnProperty(item)) {
+          dictionary[item] += 1;
+          if (user.employeestatus === true) {
+            if (dictionary2.hasOwnProperty(item)) {
+              dictionary2[item] += 1;
+            } else {
+              dictionary2[item] = 1;
+            }
+          }
+        } else {
+          dictionary[item] = 1;
+          if (user.employeestatus === true) {
+            if (dictionary2.hasOwnProperty(item)) {
+              dictionary2[item] += 1;
+            } else {
+              dictionary2[item] = 1;
+            }
+          }
+        }
+      });
+    });
+
+    const length = Object.keys(dictionary).length;
+
+    for (let i = 1; i <= length; i++) {
+      const certificationId = i; // Replace this with the actual certification ID
+      if (dictionary2.hasOwnProperty(i)){
+        await Certifications.update({ employability: (dictionary2[i] / dictionary[i]) * 100 }, {
+          where: { id: certificationId }
+        });
+      } else {
+        await Certifications.update({ employability: 0 }, {
+          where: { id: certificationId }
+        });
+      }
+    }
+
+  } catch (error) {
+    console.error('Error fetching users:', error);
+  }
+}
+
+(async () => {
+  const employabilityPercentage = await calculateEmployability();
+  console.log(employabilityPercentage);
+})();

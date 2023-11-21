@@ -1,0 +1,26 @@
+INSERT INTO certifications (id, name, institution, does_not_expire, expedition_date, expiration_date, image, description) VALUES
+(1, 'Programación web con Python', 'Universidad de Chile', true, '2023-10-30', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a crear sitios web con Python, un lenguaje de programación versátil y potente.'),
+(2, 'Diseño gráfico con Adobe Photoshop', 'Platzi', false, '2023-10-20', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a crear diseños gráficos profesionales con Adobe Photoshop, el software de edición de imágenes más popular del mundo.'),
+(3, 'Fundamentos de marketing digital', 'Google Academy for Ads', true, '2023-11-01', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Conoce las bases del marketing digital y aprende a crear campañas publicitarias efectivas en línea.'),
+(4, 'Introducción a la inteligencia artificial', 'Coursera', true, '2023-12-01', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Descubre los conceptos básicos de la inteligencia artificial y aprende a aplicarlos en tus proyectos.'),
+(5, 'Cocina básica para principiantes', 'Udemy', false, '2023-11-15', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a cocinar platos sencillos y deliciosos con este curso de cocina básica para principiantes.'),
+(6, 'Guitarra para principiantes', 'YouTube', true, '2023-12-01', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a tocar guitarra con este curso gratuito de YouTube.'),
+(7, 'Aprender a meditar', 'Headspace', true, '2023-10-30', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a meditar con este curso de Headspace, la aplicación de meditación líder en el mundo.'),
+(8, 'Cómo escribir un currículum vitae', 'LinkedIn Learning', true, '2023-11-01', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a escribir un currículum vitae que te ayude a conseguir el trabajo de tus sueños.'),
+(9, 'Cómo hablar en público', 'TED', true, '2023-12-01', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a hablar en público con este curso de TED, la organización sin fines de lucro que promueve ideas que merecen ser compartidas.'),
+(10, 'Cómo ahorrar dinero', 'Finanzas para dummies', true, '2023-10-30', '2026-10-30', 'https://i.postimg.cc/TwF3rRsd/18282893111112086-120814131549-phpapp02-thumbnail.jpg', 'Aprende a ahorrar dinero con este libro de Finanzas para dummies.');
+
+--------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO users (name, email, phone, password, mycertifications, employeestatus)
+VALUES
+    ('Usuario1', 'usuario1@example.com', '123-456-781', 'password1', '{1, 2, 5}', true),
+    ('Usuario2', 'usuario2@example.com', '123-456-782', 'password2', '{2, 4}', false),
+    ('Usuario3', 'usuario3@example.com', '123-456-783', 'password3', '{1, 2, 3, 9}', true),
+    ('Usuario4', 'usuario4@example.com', '123-456-784', 'password4', '{4, 5}', false),
+    ('Usuario5', 'usuario5@example.com', '123-456-785', 'password5', '{5, 8}', true),
+    ('Usuario6', 'usuario6@example.com', '123-456-786', 'password6', '{6, 1}', false),
+    ('Usuario7', 'usuario7@example.com', '123-456-787', 'password7', '{7, 2}', true),
+    ('Usuario8', 'usuario8@example.com', '123-456-788', 'password8', '{8, 3, 5, 1, 7}', false),
+    ('Usuario9', 'usuario9@example.com', '123-456-789', 'password9', '{9, 7, 1, 5}', true),
+    ('Usuario10', 'usuario10@example.com', '123-456-780', 'password10', '{10, 1, 6, 8, 4}', false);
