@@ -185,7 +185,7 @@ async function calculateEmployability() {
 
     for (let i = 1; i <= length; i++) {
       const certificationId = i; // Replace this with the actual certification ID
-      if (dictionary2.hasOwnProperty(i)){
+      if (dictionary2.hasOwnProperty(i) && dictionary.hasOwnProperty(i)){
         await Certifications.update({ employability: (dictionary2[i] / dictionary[i]) * 100 }, {
           where: { id: certificationId }
         });
