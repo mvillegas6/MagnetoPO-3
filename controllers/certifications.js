@@ -2,7 +2,6 @@ const { models } = require('../models/models');
 const { Op } = require('sequelize');
 const filters = require('../util/filterManager');
 
-
 const show = async (req, res, next) => {
   let certifications;
   let keyword = '';
@@ -40,8 +39,55 @@ const newReview = async (req, res, next) => {
   }
 };
 
+const recommendation = async (req, res, next) => {
+  try {
+    res.render('certifications/recommendation');
+  } catch (error) {
+    next(error);
+  }
+};
+
+const showRecommendation = async (req, res, next) => {
+  try {
+    console.log(req.body);
+    let keyword = '';
+    if (!req.body.q1) {
+      req.body.q1 = [];
+    }
+    if (!req.body.q4) {
+      req.body.q4 = [];
+    }
+    if (typeof req.body.q1 != 'object') {
+      req.body.q1 = Array(req.body.q1);
+      console.log(req.body.q1);
+    }
+    if (typeof req.body.q2 != 'object') {
+      req.body.q2 = Array(req.body.q2);
+      console.log(req.body.q2);
+    }
+    if (typeof req.body.q4 != 'object') {
+      req.body.q4 = Array(req.body.q4);
+      console.log(req.body.q4);
+
+    }
+    const certifications = await models.Certifications.findAll({
+      where: {
+        topic: { [Op.in]: req.body.q1 },
+        duration: { [Op.lte]: Number(req.body.q2) },
+        price: { [Op.lte]: Number(req.body.q3) },
+        institution: { [Op.in]: req.body.q4 },
+      },
+    });
+    // console.log(certifications);
+    res.render('certifications/show', { certifications, keyword });
+  } catch (error) {
+    next(error);
+  }
+};
 module.exports = certificationsControllers = {
   show,
   renderDetailsPage,
   newReview,
+  recommendation,
+  showRecommendation,
 };

@@ -1,0 +1,106 @@
+<% layout('layout/boilerplate') %> <%- include('../templates/navbar') %>
+<link rel="stylesheet" href="/styles/recommendation.css" />
+<main>
+  <div class="centerContainer">
+    <h1 class="text-secondary-emphasis">¡Bienvenido a la encuesta de recomendaciones de cursos!</h1>
+    <form action="/certifications/recommendation" method="post">
+      <div class="q1">
+        <p class="title">Selecciona las categorias sobre las que te gustaria estudiar</p>
+        <div class="options1">
+          <input type="checkbox" class="btn-check" id="Programacion" name="q1" value="Tecnologia" />
+          <label class="btn btn-outline-success labelq1" for="Programacion">Programacion</label>
+
+          <input type="checkbox" class="btn-check" id="Economia" name="q1" value="Emprendimiento" />
+          <label class="btn btn-outline-success labelq1" for="Economia">Economia</label>
+
+          <input type="checkbox" class="btn-check" id="Diseño" name="q1" value="Diseño" />
+          <label class="btn btn-outline-success labelq1" for="Diseño">Diseño</label>
+
+          <input type="checkbox" class="btn-check" id="Artes" name="q1" value="artes" />
+          <label class="btn btn-outline-success labelq1" for="Artes">Artes</label>
+
+          <input type="checkbox" class="btn-check" id="Derecho" name="q1" value="Derecho" />
+          <label class="btn btn-outline-success labelq1" for="Derecho">Derecho</label>
+
+          <input type="checkbox" class="btn-check" id="Ciencias" name="q1" value="Ciencias" />
+          <label class="btn btn-outline-success labelq1" for="Ciencias">Ciencias</label>
+        </div>
+      </div>
+      <div class="q1">
+        <p class="title">Con Cuanto tiempo deseas dedicarle al curso que buscas?</p>
+        <div class="options2">
+          <input type="radio" class="btn-check" name="q2" id="1<" autocomplete="off" value="10" />
+          <label class="btn btn-outline-success labelq2" for="1<">Menos de 1 hora por dia</label>
+
+          <input type="radio" class="btn-check" name="q2" id="3<1" autocomplete="off" value="30" />
+          <label class="btn btn-outline-success labelq2" for="3<1">Entre 1 y 3 horas por dia</label>
+
+          <input type="radio" class="btn-check" name="q2" id="4<3" autocomplete="off" value="40" />
+          <label class="btn btn-outline-success labelq2" for="4<3">Entre 3 y 4 horas por dia</label>
+
+          <input type="radio" class="btn-check" name="q2" id="+4" autocomplete="off" value="50" />
+          <label class="btn btn-outline-success labelq2" for="+4">4 horas o mas por dia</label>
+
+          <input type="radio" class="btn-check" name="q2" id="NA" autocomplete="off" value="5000" checked />
+          <label class="btn btn-outline-success labelq2" for="NA"
+            >No tengo Ningun problema con el tiempo</label
+          >
+        </div>
+      </div>
+      <div class="q1">
+        <p class="title">Cuanto dinero estas dispuesto a gastarte en el curso que buscas?</p>
+        <div class="options1">
+          <input type="radio" class="btn-check" name="q3" id="under100" autocomplete="off" value="100" />
+          <label class="btn btn-outline-success labelq2" for="under100">Menos de 100.000$ COP</label>
+
+          <input type="radio" class="btn-check" name="q3" id="under300" autocomplete="off" value="300" />
+          <label class="btn btn-outline-success labelq2" for="under300">Menos de 300.000$ COP</label>
+
+          <input type="radio" class="btn-check" name="q3" id="NP" autocomplete="off" value="10000" checked />
+          <label class="btn btn-outline-success labelq2" for="NP">No tengo problema con el dinero</label>
+        </div>
+      </div>
+      <div class="q1">
+        <p class="title">Tienes algunas plataformas de preferencia?</p>
+        <div class="options1">
+          <input type="checkbox" class="btn-check" id="Udemy" name="q4" value="Udemy" autocomplete="off" />
+          <label class="btn btn-outline-success" for="Udemy">Udemy</label>
+
+          <input type="checkbox" class="btn-check" id="Coursera" name="q4" value="Coursera" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="Coursera">Coursera</label>
+
+          <input type="checkbox" class="btn-check" id="Eafit" name="q4" value="Eafit" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="Eafit">Eafit</label>
+
+          <input type="checkbox" class="btn-check" id="Platzi" name="q4" value="Platzi" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="Platzi">Platzi</label>
+
+          <input type="checkbox" class="btn-check" id="Skillshare" name="q4" value="Skillshare" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="Skillshare">Skillshare</label>
+
+          <input type="checkbox" class="btn-check" id="Codecademy" name="q4" value="Codecademy" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="Codecademy">Codecademy</label>
+
+          <input type="checkbox" class="btn-check" id="EDX" name="q4" value="EDX" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="EDX">EDX</label>
+
+          <input
+            type="checkbox"
+            class="btn-check"
+            id="Google_activate"
+            name="q4"
+            value="Google"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-success labelq1" for="Google_activate">Google Activate</label>
+
+          <input type="checkbox" class="btn-check" id="otro" name="q4" autocomplete="off" />
+          <label class="btn btn-outline-success labelq1" for="otro">Otro</label>
+        </div>
+      </div>
+      <div class="button">
+        <button class="btn btn-primary done-btn">Hecho</button>
+      </div>
+    </form>
+  </div>
+</main>
