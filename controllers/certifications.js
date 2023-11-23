@@ -1,6 +1,7 @@
 const { models } = require('../models/models');
 const { Op } = require('sequelize');
 const filters = require('../util/filterManager');
+const certifications = require('../routes/certifications');
 
 const show = async (req, res, next) => {
   let certifications;
@@ -51,11 +52,13 @@ const showRecommendation = async (req, res, next) => {
   try {
     console.log(req.body);
     let keyword = '';
+    let institution = true;
     if (!req.body.q1) {
       req.body.q1 = [];
     }
     if (!req.body.q4) {
       req.body.q4 = [];
+      institution = false;
     }
     if (typeof req.body.q1 != 'object') {
       req.body.q1 = Array(req.body.q1);
@@ -68,16 +71,8 @@ const showRecommendation = async (req, res, next) => {
     if (typeof req.body.q4 != 'object') {
       req.body.q4 = Array(req.body.q4);
       console.log(req.body.q4);
-
     }
-    const certifications = await models.Certifications.findAll({
-      where: {
-        topic: { [Op.in]: req.body.q1 },
-        duration: { [Op.lte]: Number(req.body.q2) },
-        price: { [Op.lte]: Number(req.body.q3) },
-        institution: { [Op.in]: req.body.q4 },
-      },
-    });
+    const certifications = await filters.findRecomendations(req.body, institution);
     // console.log(certifications);
     res.render('certifications/show', { certifications, keyword });
   } catch (error) {
