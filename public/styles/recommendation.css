@@ -1,0 +1,57 @@
+body {
+  overflow-y: hidden;
+}
+h1 {
+  text-align: center;
+  margin: 15px 5px 0 5px;
+  font-weight: 100;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+  height: 93vh;
+  margin: 0 auto;
+  width: 55%;
+  overflow-y: scroll;
+}
+
+.q1 {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+
+.title {
+  text-align: center;
+}
+
+.options1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.options2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.centerContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.button {
+  text-align: center;
+  margin: 10px;
+}
+
+.done-btn {
+  width: 300px;
+}

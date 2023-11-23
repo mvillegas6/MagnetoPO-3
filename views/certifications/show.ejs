@@ -1,8 +1,6 @@
 <% layout('layout/boilerplate') %> <%- include('../templates/navbar') %>
 <link rel="stylesheet" href="/styles/show.css" />
-<script
-  src="https://kit.fontawesome.com/d1023b5858.js"
-  crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d1023b5858.js" crossorigin="anonymous"></script>
 
 <main class="mainContainer">
   <section class="leftContainer">
@@ -19,14 +17,17 @@
         <a href="/certifications?filtro=>30">De 30 a 50 horas</a>
         <a href="/certifications?filtro=>50">Mas de 50 horas</a>
       </div>
-      <a href="#" class="mainAnchor">Area</a> 
+      <a href="#" class="mainAnchor">Area</a>
       <div class="Aoptions d-none">
         <a href="/certifications?filtro=Tecnologia">Tecnologia</a>
         <a href="/certifications?filtro=Mercadeo">Mercadeo</a>
         <a href="/certifications?filtro=Emprendimiento">Emprendimiento</a>
       </div>
       <a href="#" class="mainAnchor">Empleabilidad</a>
-      <div class="Aoptions d-none"></div>
+      <div class="Aoptions d-none">
+        <a href="/certifications?filtro=<empleabilidad">Mas Empleabilidad</a>
+        <a href="/certifications?filtro=>empleabilidad">Menos Empleabilidad</a>
+      </div>
       <a href="#" class="mainAnchor">Institución</a>
       <div class="Aoptions d-none">
         <a href="/certifications?filtro=Udemy">Udemy</a>
@@ -38,11 +39,7 @@
 
   <section class="certificationContainer">
     <form action="" class="serachBar">
-      <input
-        class="searchInput"
-        placeholder="Buscar cursos"
-        type="text"
-        name="q" />
+      <input class="searchInput" placeholder="Buscar cursos" type="text" name="q" />
       <button type="submit" class="btn form-control btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -53,10 +50,7 @@
         <div class="certification">
           <div class="info">
             <div class="imgContainer">
-              <img
-                class="img-fluid certificationImage"
-                src="<%= certification.image %>"
-                alt="" />
+              <img class="img-fluid certificationImage" src="<%= certification.image %>" alt="" />
             </div>
             <div class="infoContainer">
               <h4><%= certification.name %></h4>

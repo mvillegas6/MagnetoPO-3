@@ -15,7 +15,7 @@ sequelizeSync(); // Sync models with database
 
 app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(methodOverride('_method'));

@@ -86,6 +86,14 @@ const manager = async (filtro) => {
           },
         },
       });
+    case '>empleabilidad':
+      return await models.Certifications.findAll({
+        order: [['employability', 'ASC']],
+      });
+    case '<empleabilidad':
+      return await models.Certifications.findAll({
+        order: [['employability', 'DESC']],
+      });
     default:
       break;
   }
@@ -137,6 +145,29 @@ const addReview = async (body, certification) => {
   await certification.addReviews(review, { through: { selfGranted: false } });
 };
 
+const findRecomendations = async (body, institution) => {
+  let certifications = [];
+  if (institution) {
+    certifications = await models.Certifications.findAll({
+      where: {
+        topic: { [Op.in]: body.q1 },
+        duration: { [Op.lte]: Number(body.q2) },
+        price: { [Op.lte]: Number(body.q3) },
+        institution: { [Op.in]: body.q4 },
+      },
+    });
+  } else {
+    certifications = await models.Certifications.findAll({
+      where: {
+        topic: { [Op.in]: body.q1 },
+        duration: { [Op.lte]: Number(body.q2) },
+        price: { [Op.lte]: Number(body.q3) },
+      },
+    });
+  }
+  return certifications;
+};
+
 module.exports = {
   manager,
   querySearch,
@@ -144,4 +175,5 @@ module.exports = {
   filterReviews,
   addReview,
   findCertifications,
+  findRecomendations,
 };
